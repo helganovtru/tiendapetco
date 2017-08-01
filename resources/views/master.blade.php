@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sistema de Administración de Proyectos</title>
+	<title>PetCo México</title>
 	<link rel="stylesheet" href="{{asset("css/bootstrap.css")}}"">
 	<script src="{{asset("js/jquery-3.2.1.js")}}"></script>
 </head>
@@ -15,7 +15,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{url('/')}}">Inicio</a>
+      <a class="navbar-brand" href="{{url('/homeadmin')}}"><img src="imagespetco/petcologoblanco.png" height="155%" /></a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -23,10 +23,10 @@
         <li>
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Registrar <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="{{url('/registrarProyecto')}}">Registrar Proyecto</a></li>
-            <li><a href="{{url('/registrarEncargado')}}">Registrar Encargado</a></li>
-            <li><a href="{{url('/registrarRecurso')}}">Registrar Recurso</a></li>
-            <li><a href="{{url('/registrarPuesto')}}">Registrar Puesto</a></li>
+            <li><a href="{{url('/registrarProd')}}">Producto</a></li>
+            <li><a href="{{url('/registrarCat')}}">Categoria/a></li>
+            <li><a href="{{url('/registrarAdmin')}}">Administrador</a></li>
+            <li><a href="{{url('/registrarCli')}}">Cliente</a></li>
             
           </ul>
         </li>
@@ -34,22 +34,21 @@
         <li>
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Consultar <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="{{url('/consultarProyectos')}}">Consultar Proyectos</a></li>
-            <li><a href="{{url('/consultarEncargados')}}">Consultar Encargados</a></li>
-            <li><a href="{{url('/consultarRecursos')}}">Consultar Recursos</a></li>
-            <li><a href="{{url('/consultarPuestos')}}">Consultar Puestos</a></li>
-          
+            <li><a href="{{url('/consultarProd')}}">Productoss</a></li>
+            <li><a href="{{url('/consultarCat')}}">Categorias</a></li>
+            <li><a href="{{url('/consultarAdmin')}}">Administradores</a></li>
+            <li><a href="{{url('/consultarCli')}}">Clientes</a></li>
           </ul>
         </li>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
+      
+    
+
+    <div class="nav navbar-nav navbar-right">
+      <a class="navbar-brand" href="{{url('/')}}">Cerrar Sesión</a>
     </div>
   </div>
+</div>
 </nav>
 
 <div class="container">
@@ -61,7 +60,7 @@
 </div>
 
 <footer class="text-center">
-	<hr> Helga Novelo, Negocios Electrónicos &copy; 2017
+	<hr> Petco México &copy; 2017 by Helga Novelo
 </footer>
 <script src="{{asset("js/bootstrap.js")}}"></script>
 </body>

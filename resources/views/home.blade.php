@@ -1,9 +1,17 @@
-@extends('master')
+@extends('layouts.app')
 
-@section('contenido')
-<div class="jumbotron">
-  <h1>Sistema de Administración de Proyectos</h1>
-  <p>Este sistema permite gestionar procesos relacionados con planeación de proyectos. Entre las principales funciones, se tiene la gestión de proyectos, recursos, reportes y asignación de recursos.</p>
-  <p><a class="btn btn-primary btn-lg">Ver más</a></p>
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">Dashboard</div>
+
+                <div class="panel-body">
+                    Bienvenido!
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-@stop
+@endsection

@@ -11,51 +11,44 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+Route::get('/login', 'HomeController@index');
+
+Route::get('/homeadmin', function () {
+    return view('homeadmin');
 });
-//Route::get('/ejemplo', function () {
-  //  return view('ejemplo');
-//});
-Route::get('/ejemplo','ejemploController@index');
+Route::get('/mostrarDetalle/{id}','tiendaController@mostrarDet');
+Route::get('/catalogoProd','tiendaController@cargarCat');
+Route::get('/registrarAdmin','tiendaController@registrarAdmin');
+Route::get('/homecliente','tiendaController@homeCliente');
+Route::get('/registrarProd','tiendaController@registrarProd');
+Route::get('/registrarCat', 'tiendaController@registrarCat');
+Route::get('/registrarCli','tiendaController@registrarCli');
+Route::get('/registrarme','tiendaController@registrarCliente');
 
-Route::get('/registrarEncargado','proyectosController@registrarEnc');
-Route::get('/registrarProyecto','proyectosController@registrarPro');
-Route::get('/registrarPuesto', 'proyectosController@registrarPto');
-Route::get('/registrarRecurso','proyectosController@registrarRec');
+Route::post('/guardarAdmin', 'tiendaController@guardarAdmin');
+Route::post('/guardarProd','tiendaController@guardarProd');
+Route::post('/guardarCli','tiendaController@guardarCli');
+Route::post('/guardarCliente','tiendaController@guardarCliente');
+Route::post('/guardarCat','tiendaController@guardarCat');
 
-Route::post('/guardarEncargado', 'proyectosController@guardarEnc');
-Route::post('/guardarProyecto','proyectosController@guardarPro');
-Route::post('/guardarPuesto','proyectosController@guardarPto');
-Route::post('/guardarRecurso','proyectosController@guardarRec');
+Route::get('/consultarAdmin', 'tiendaController@consultarAdmin');
+Route::get('/consultarProd','tiendaController@consultarProd');
+Route::get('/consultarCat', 'tiendaController@consultarCat');
+Route::get('/consultarCli', 'tiendaController@consultarCli');
 
-Route::get('/consultarEncargados', 'proyectosController@consultarEnc');
-Route::get('/consultarProyectos','proyectosController@consultarPro');
-Route::get('/consultarPuestos', 'proyectosController@consultarPto');
-Route::get('/consultarRecursos', 'proyectosController@consultarRec');
+Route::get('/eliminarAdmin/{id}', 'tiendaController@eliminarAdmin');
+Route::get('/eliminarProd/{id}', 'tiendaController@eliminarProd');
+Route::get('/eliminarCat/{id}', 'tiendaController@eliminarCat');
+Route::get('/eliminarCli/{id}', 'tiendaController@eliminarCli');
 
-Route::get('/eliminarEncargado/{id}', 'proyectosController@eliminarEnc');
-Route::get('/eliminarProyecto/{id}', 'proyectosController@eliminarPro');
-Route::get('/eliminarPuesto/{id}', 'proyectosController@eliminarPto');
-Route::get('/eliminarRecurso/{id}', 'proyectosController@eliminarRec');
+Route::get('/editarAdmin/{id}', 'tiendaController@editarAdmin');
+Route::get('/editarProd/{id}','tiendaController@editarProd');
+Route::get('/editarCat/{id}', 'tiendaController@editarCat');
+Route::get('/editarCli/{id}','tiendaController@editarCli');
 
-Route::get('/editarEncargado/{id}', 'proyectosController@editarEnc');
-Route::get('/editarProyecto/{id}','proyectosController@editarPro');
-Route::get('/editarPuesto/{id}', 'proyectosController@editarPto');
-Route::get('/editarRecurso/{id}','proyectosController@editarRec');
+Route::post('/actualizarAdmin/{id}','tiendaController@actualizarAdmin');
+Route::post('/actualizarProd/{id}','tiendaController@actualizarProd');
+Route::post('/actualizarCat/{id}','tiendaController@actualizarCat');
+Route::post('/actualizarCli/{id}','tiendaController@actualizarCli');
+Route::auth();
 
-Route::post('/actualizarEncargado/{id}','proyectosController@actualizarEnc');
-Route::post('/actualizarProyecto/{id}','proyectosController@actualizarPro');
-Route::post('/actualizarPuesto/{id}','proyectosController@actualizarPto');
-Route::post('/actualizarRecurso/{id}','proyectosController@actualizarRec');
-
-Route::get('/proyectosPDF','proyectosController@pdfPro');
-Route::get('/encargadosPDF','proyectosController@pdfEnc');
-Route::get('/recursosPDF','proyectosController@pdfRec');
-Route::get('/puestosPDF','proyectosController@pdfPto');
-
-Route::get('/agregarRecursos/{id}','proyectosController@agregarRec');
-
-Route::post('/guardarAsignacion/{id}','proyectosController@guardarAsignacion');
-Route::get('/eliminarAsignacion/{idr}/{idp}','proyectosController@eliminarAsignacion');
-Route::get('/recursosproyectosPDF/{id}','proyectosController@pdfProRec');
